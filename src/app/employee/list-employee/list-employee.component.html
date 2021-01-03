@@ -1,0 +1,29 @@
+<h1>All Employees</h1>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Name</th>
+    <th scope="col">Age</th>
+    <th scope="col">Department</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let employee of employees">
+    <th scope="row">{{employee.id}}</th>
+    <td>{{employee.name}}</td>
+    <td>{{employee.age}}</td>
+    <td>{{employee.department?.name}}</td>
+    <td>
+      <a [routerLink]="['/employees/edit/'+employee.id]">
+        <button class="btn btn-info">Edit</button>
+      </a>
+      &nbsp;
+      <a [routerLink]="['/employees/delete/'+employee.id]">
+        <button class="btn btn-danger">Delete</button>
+      </a>
+    </td>
+  </tr>
+  </tbody>
+</table>
